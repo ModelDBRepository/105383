@@ -1,0 +1,102 @@
+------ Build started: Project: GPC, Configuration: Release Win32 ------
+
+Compiling...
+Model.cpp
+IntegratorCVode.cpp
+GPC.cpp
+fileIO.cpp
+C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\actor\insert_key_actor.hpp(69) : error C2078: too many initializers
+        C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\actor\ref_const_ref_value_actor.hpp(67) : see reference to function template instantiation 'void boost::spirit::insert_key_action::act<T,ValueT,IteratorT>(T &,const ValueT &,const IteratorT & ,const IteratorT & ) const' being compiled
+        with
+        [
+            T=std::map<int,int>,
+            ValueT=std::pair<const int,int>,
+            IteratorT=iterator_t
+        ]
+        C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\core\scanner\scanner.hpp(144) : see reference to function template instantiation 'void boost::spirit::ref_const_ref_value_actor<T,ValueT,ActionT>::operator ()<IteratorT>(const IteratorT & ,const IteratorT & ) const' being compiled
+        with
+        [
+            T=std::map<int,int>,
+            ValueT=std::pair<const int,int>,
+            ActionT=boost::spirit::insert_key_action,
+            IteratorT=iterator_t
+        ]
+        C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\core\scanner\scanner.hpp(159) : see reference to function template instantiation 'void boost::spirit::attributed_action_policy<boost::spirit::nil_t>::call<ActorT,IteratorT>(const ActorT &,boost::spirit::nil_t,const IteratorT & ,const IteratorT & )' being compiled
+        with
+        [
+            ActorT=boost::spirit::ref_const_ref_value_actor<std::map<int,int>,std::pair<const int,int>,boost::spirit::insert_key_action>,
+            IteratorT=iterator_t
+        ]
+        C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\core\composite\actions.hpp(109) : see reference to function template instantiation 'void boost::spirit::action_policy::do_action<ActionT,boost::spirit::match<boost::spirit::nil_t>::return_t,iterator_t>(const ActorT &,AttrT &,const IteratorT & ,const IteratorT & ) const' being compiled
+        with
+        [
+            ActionT=boost::spirit::ref_
+const_ref_value_actor<std::map<int,int>,std::pair<const int,int>,boost::spirit::insert_key_action>,
+            ActorT=boost::spirit::ref_const_ref_value_actor<std::map<int,int>,std::pair<const int,int>,boost::spirit::insert_key_action>,
+            AttrT=boost::spirit::match<boost::spirit::nil_t>::return_t,
+            IteratorT=iterator_t
+        ]
+        C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\core\non_terminal\impl\rule.ipp(233) : see reference to function template instantiation 'boost::spirit::parser_result<ParserT,ScannerT>::type boost::spirit::action<DerivedT,ActionT>::parse<ScannerT>(const ScannerT &) const' being compiled
+        with
+        [
+            ParserT=boost::spirit::action<boost::spirit::confix_parser<boost::spirit::impl::char_as_parser::type,boost::spirit::impl::default_as_parser<boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>>::type,boost::spirit::impl::char_as_parser::type,boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>::parser_category_t,boost::spirit::non_nested,boost::spirit::non_lexeme>,boost::spirit::ref_const_ref_value_actor<std::map<int,int>,std::pair<const int,int>,boost::spirit::insert_key_action>>::self_t,
+            ScannerT=boost::spirit::rule<>::scanner_t,
+            DerivedT=boost::spirit::confix_parser<boost::spirit::impl::char_as_parser::type,boost::spirit::impl::default_as_parser<boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::sp
+irit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>>::type,boost::spirit::impl::char_as_parser::type,boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>::parser_category_t,boost::spirit::non_nested,boost::spirit::non_lexeme>,
+            ActionT=boost::spirit::ref_const_ref_value_actor<std::map<int,int>,std::pair<const int,int>,boost::spirit::insert_key_action>
+        ]
+        C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\core\non_terminal\impl\rule.ipp(232) : while compiling class-template member function 'boost::spirit::match_result<MatchPolicyT,T>::type boost::spirit::impl::concrete_parser<ParserT,ScannerT,AttrT>::do_parse_virtual(const ScannerT &) const'
+        with
+        [
+            MatchPolicyT=boost::spirit::rule<>::scanner_t,
+            T=boost::spirit::rule<>::attr_t,
+            ParserT=boost::spirit::action<boost::spirit::confix_parser<boost::spirit::impl::char_as_parser::type,boost::spirit::impl::default_as_parser<boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>>::type,boost::spirit::impl::char_as_parser::type,boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>::parser_category_t,boost::spirit::non_nested,boost::spirit::non_lexeme>,boost::spirit::ref_const_ref_value_actor<std::map<int,int>,std::pair<const int,int>,boost::spirit::insert_key_action>>,
+            ScannerT=boost::spirit::rule<>::scanner_t,
+            AttrT=boost::spirit::rule<>::attr_t
+        ]
+        C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\core\non_terminal\rule.hpp(129) : see reference to class template instantiation 'boost::spirit::impl::concrete_parser<ParserT,ScannerT,AttrT>' being compiled
+        with
+        [
+            ParserT=boost::spirit::action<boost::spirit::confix_parser<boost::spirit::impl::char_as_parser::type,boost::spirit::impl::default_as_parser
+<boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>>::type,boost::spirit::impl::char_as_parser::type,boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>::parser_category_t,boost::spirit::non_nested,boost::spirit::non_lexeme>,boost::spirit::ref_const_ref_value_actor<std::map<int,int>,std::pair<const int,int>,boost::spirit::insert_key_action>>,
+            ScannerT=boost::spirit::rule<>::scanner_t,
+            AttrT=boost::spirit::rule<>::attr_t
+        ]
+        fileIO.cpp(156) : see reference to function template instantiation 'boost::spirit::rule<>::rule<boost::spirit::action<ParserT,ActionT>>(const boost::spirit::action<ParserT,ActionT> &)' being compiled
+        with
+        [
+            ParserT=boost::spirit::confix_parser<boost::spirit::impl::char_as_parser::type,boost::spirit::impl::default_as_parser<boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>>::type,boost::spirit::impl::char_as_parser::type,boost::spirit::sequence<boost::spirit::sequence<boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>,boost::spirit::chlit<char>>,boost::spirit::action<boost::spirit::int_parser<int>,boost::spirit::ref_value_actor<int,boost::spirit::assign_action>>>::parser_category_t,boos
+t::spirit::non_nested,boost::spirit::non_lexeme>,
+            ActionT=boost::spirit::ref_const_ref_value_actor<std::map<int,int>,std::pair<const int,int>,boost::spirit::insert_key_action>
+        ]
+C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\actor\insert_key_actor.hpp(69) : error C2440: 'initializing' : cannot convert from 'const iterator_t ' to 'key_type'
+        This conversion requires a reinterpret_cast, a C-style cast or function-style cast
+C:\Documents and Settings\Robert Jacques\My Documents\ccbm\boost_1_31_0\boost_1_31_0\boost\spirit\actor\insert_key_actor.hpp(70) : error C2664: 'std::pair<_Ty1,_Ty2>::pair(const int &,const _Ty2 &)' : cannot convert parameter 2 from 'const std::pair<_Ty1,_Ty2>' to 'const int &'
+        with
+        [
+            _Ty1=const int,
+            _Ty2=int
+        ]
+        and
+        [
+            _Ty1=const int,
+            _Ty2=int
+        ]
+        Reason: cannot convert from 'const std::pair<_Ty1,_Ty2>' to 'const int'
+        with
+        [
+            _Ty1=const int,
+            _Ty2=int
+        ]
+        No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+Generating Code...
+
+Build log was saved at "file://c:\Documents and Settings\Robert Jacques\My Documents\ccbm\GPC v1.0.6\Gpc\Release\BuildLog.htm"
+GPC - 3 error(s), 0 warning(s)
+
+
+---------------------- Done ----------------------
+
+    Build: 0 succeeded, 1 failed, 0 skipped
+
+

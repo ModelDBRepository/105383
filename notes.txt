@@ -1,0 +1,278 @@
+//Remember to set CVODE to MAXSTATES-1 length Assume for now, for
+//now that I can init states and dstates, pass that memory to the
+//integrators and state 46 if in algebraic mode.
+
+-Modification to use seperate vectors? for mito/force only, how to
+ modify? -> linear vectors with state offsets (I.e. subset vectors)
+
+-Where do the 'extra' charges from the alg model get changed
+
+-VFO is a calculated but unused variable? -> Move to output?
+ (Commented Out)
+
+//VAD_AT
+//VcnsASP
+
+VAAT
+VACO
+VANT
+VATPase
+VCS
+VFH
+VHFe
+Vhleak
+VHNe
+Vhu
+VIDH
+VKGDH
+VMDH
+VnaCa
+VNO
+VSDH
+VSL
+Vuni 
+
+	double O1_RyR;
+	double 1000_F_Acap_C_m;
+	double Co;
+	double Istim;
+	double E_Na;
+	double E_K;
+	double E_Ks;
+	double E_Ca;
+	double INa;
+	double G_Na;
+	double IKs;
+	double IK1;
+	double G_Nab;
+	double INab;
+	double G_Kp;
+	double IKp;
+	double ICahalf;
+	double ICamax;
+	double PK;
+	double ICaK;
+	double ICa;
+	double INaK;
+	double INaKmax;
+	double KmNai;
+	double KmKo;
+	double Ko;
+	double Ki1AD_NaK;
+	double Km1AT_NaK;
+	double eta;
+	double Nao;
+	double Cao;
+	double KmCa;
+	double ksat;
+//	double Fcik1;
+	double KmNa;
+	double G_Cab;
+	double ICab;
+	double IpCa;
+	double Km2ATP_CaP;
+	double KiADP_CaP;
+	double Km1ATP_CaP;
+	double KmpCa;
+	double IpCamax;
+	double PnsNa;
+	double KmnsCa;
+	double PnsK;
+	double InsCa;
+	double V_AM_scaler;
+	double f_01;
+	double f_12;
+	double f_23;
+	double V_AM;
+
+	//Mitochondia
+	double ATPm;
+	double Cm;
+	double DmuH;
+	double DpH;
+	double CPN;
+	double NAD;
+	double VCS;
+	double KmOaa;
+	double AcCoA;
+	double KmAcCoA;
+	double EtCS;
+	double KCS;
+	double VACO;
+	double CIK;
+	double KACOeq;
+	double kfACO;
+	double kKGDH;
+	double EtKG;
+	double KmKG;
+	double Mg;
+	double Kmg;
+	double Kca;
+	double KmKGNAD;
+	double nKG;
+	double VKGDH;
+	double CoA;
+	double kfSL;
+	double KSLeq;
+	double VSL;
+	double kSDH;
+	double EtSDH;
+	double KmSucc;
+	double KiFUM;
+	double KiOxaa;
+	double VSDH;
+	double kfFH;
+	double KFHeq;
+	double VFH;
+	double Kh1;
+	double Kh2;
+	double Kh3;
+	double Kh4;
+	double Koff;
+	double H;
+	double Kioaa;
+	double KmmNAD;
+	double Kmal;
+	double EtMD;
+	double kMDH;
+	double VMDH;
+	double kfAAT;
+	double GLU;
+	double kcnsASP;
+	double KAATeq;
+	double VAAT;
+	double kres;
+	double rhoREN;
+	double Dpsio;
+	double g;
+	double ra;
+	double rc1;
+	double r1;
+	double rc2;
+	double rb;
+	double VNO;
+	double VHNe;
+	double kresf;
+	double FADH2;
+	double FAD;
+	double r2;
+	double r3;
+	double VFO;
+	double VHFe;
+	double kf1;
+	double Pi;
+	double pa;
+	double pc1;
+	double pc2;
+	double VATPase;
+	double Vhu;
+	double gh;
+	double VmDT;
+	double hm;
+	double VANT;
+	double Vhleak;
+
+	//Junction Paramerters & Vars
+	double Kfb;
+	double Krb;
+	double Nfb;
+	double KSR;
+	double vmaxf;
+	double vmaxr;
+	double KmATP_SR;
+	double Ki_SR;
+	double Ki_prime_SR;
+	double v1;
+	double tauxfer;
+	double tautr;
+	double Jup;
+	double Jrel;
+	double Jtr;
+	double Jxfer;
+
+	//force Parameters
+	double alpha_SL;
+	double zeta;
+	double FN_Ca;
+	double Fnorm;
+	double Force;
+	double kTrop_pn;
+	double LTRPNtot;
+	double Ktrop_half;
+	double Ntrop;
+	double f_01;
+	double g_01_mod;
+	double f_12;
+	double g_12_mod;
+	double g_23_mod;
+	double f_23;
+	double kltrpn_plus;
+	double LTRPNtot;
+	double kltrpn_minus;
+
+	//Junction Params
+	double CMDNtot;
+	double KmCMDN;
+	double CSQNtot;
+	double KmCSQN;
+	double Jtrpn;
+	double beta_SS;
+	double beta_JSR;
+	double beta_i;
+
+	//Vuni
+	double Vmuni;
+	double ktrans;
+	double L;
+	double kact;
+	double na;
+	double Vuni;
+
+	//VnaCa
+	double b;
+	double VmNC;
+	double Kna;
+	double n;
+	double Knca;
+	double VnaCa;
+
+	//Mitochondia
+
+	//Derivative Calculation Parameters
+	double InsNa;
+	double Vmyo;
+	double Acap;
+	double InsK;
+	double VSS;
+	double VNSR;
+	double VJSR;
+	double C_m;
+	double kaplus;
+	double kbplus;
+	double kaplus;
+	double kaminus;
+	double kbminus;
+	double kcminus;
+	double fprime;
+	double gprime;
+
+	//Stimulation modes
+	double time_on_Is1;
+	double time_off_Is1;
+	double time_on_Is2;
+	double time_off_Is2;
+	double pulse_amplitude;
+	double shift;
+	double t1;
+	double t2;
+	double high_freq;
+	double period;
+	double norm_freq;
+	double high_freq_hz;
+	double norm_freq_hz;
+	double pulse_duration;
+	double start_time_shift;
+	double start_time_shift_time_on;
+	double time_vclamp_on;
+	double vclamp_set;
+	double vclamp_hold;

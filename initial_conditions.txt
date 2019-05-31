@@ -1,0 +1,69 @@
+!
+! Initial conditions file for GPC 1.0
+! Date: 2004.9.3 at 15:51 (ISO format: Year.Month.Date)
+! Simulation time: 500000ms
+! Number of states: 50
+! 
+! General
+!
+!  Format of the parameter file:
+!    Comment lines start with !
+!    Each input line starts with a number, then a space or a tab, after that can be anything until newline
+!    Input lines have to be in certain order
+!    Number of comment lines or empty lines is not limited
+!	 Order of numbers is important, since they are read in the order shown here, regardless of comment
+!
+!        value     variable
+V	= -85.6392
+mNa	= 0.0328095
+hNa	= 0.986907
+jNa=      0.991685           
+xKs=   0.000142496           
+Nai=        6.8521           
+ Ki=      143.009            
+ Cai= 5.18688e-005           
+ CaNSR=     0.182623         
+  CaSS=5.44977e-005          
+  CaJSR=    0.182665         
+   C1_RyR=   0.940086        
+ O2_RyR= 2.41394e-011        
+  C2_RyR=0.0598432        
+  C0=    0.999162            
+ C1= 7.02417e-005            
+C2=  1.85176e-009            
+ C3= 2.16967e-014            
+  C4=9.53308e-020            
+Open=  1.42997e-020          
+ CCa0=  0.000769686          
+  CCa1=2.16439e-007          
+ CCa2=2.28237e-011          
+ CCa3= 1.06968e-015          
+ CCa4=1.87999e-020          
+      OCa=       0           
+  yCa=    0.981582           
+   LTRPNCa= 0.00803804       
+    HTRPNCa=  0.131649       
+     N0= 0.999889            
+ N1= 1.65206e-005            
+ P0= 1.91752e-005            
+ P1= 1.65672e-005            
+ P2= 3.09336e-005            
+ P3= 2.69442e-005            
+  ATPi_cyto=     7.77459     
+   ATPi=     7.9903          
+    CrPi_cyto=   12.2225     
+    CrPi_mito=   12.8447     
+  Cam=8.15443e-005           
+   ADPm=  0.0709461          
+     Dpsi=  154.226          
+     NADH=  1.79227          
+     ISOC=0.0522674          
+ AKG= 4.54092e-005           
+    SCoA=  0.903884          
+  Succ= 0.000249084          
+  FUM=   0.0148267           
+   MAL= 0.00448343           
+  Oaa=2.21673e-006  
+
+//Mito Matlab version, get a good value from Sonia later
+ASP = 1         

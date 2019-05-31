@@ -1,0 +1,60 @@
+int CVode(void *cvode_mem, realtype tout, N_Vector yout, realtype *t, int itask);
+(NORMAL or ONE_STEP) tout = desired output time. yout is the output vector
+
+//Given
+N_Vector v; //This is a pointer
+real *v_data;
+real r;
+integer v_len;
+integer i;
+
+//User defined/alloc data
+N_Vector N_VMake(integertype n, realtype *v_data, M_Env machEnv);
+void N_VDispose(N_Vector v);
+
+//Accessors
+N_VGetData(v); //pointer to data storage
+N_VSetData(realtype *v_data, N_Vector v)
+N_VLENGTH;  //Set/Get the length of the vector
+N_VIth(v,i);//Like v[i]
+
+//Manually
+v = (N_Vector) malloc(sizeof(*v)); v->data = v_data; v->length = v_len;
+free(v)
+v->data;
+v->length;
+(v->data)[i]
+
+//CVode alloc
+v = N_VNew(int n, NULL)
+N_VFree(v)
+
+//CVodeMalloc
+static void *cvode_mem;
+cvode_mem = CVodeMalloc(N, f, t0, y0,lmm, iter, itol, &reltol, &abstol, f_data, errfp, optIn, iopt, ropt, NULL)
+N = Problem Size
+t0, y0 = Initial conditions
+lmm = Liner Multistep method (Adams, BRF)
+itol = (SS) scale relative and absolute tolerances | (SV) scalar relative and vector (N_Vactor) absolute tolerances
+f_data = pointer to user data;
+errfp = file pointer for error, NULL = standard output
+iopt, ropt = real and integer optional inputs
+**y0 is copied to zn[0]
+
+For code see cvode.c L#495 ,cvode.h L#564
+
+
+void f_GPC(long N, realtype time, N_Vector y, N_Vector ydot, void *f_data) { 
+f(N, tn, zn[0], ftemp, f_data);
+zn[0] = y
+ftemp = ydot
+
+#define zn     (cv_mem->cv_zn) 
+#define ftemp  (cv_mem->cv_ftemp)
+first run
+f(N, tn, zn[0], zn[1], f_data); 
+
+Must redo pointers everytime;
+
+
+
