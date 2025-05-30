@@ -25,4 +25,4 @@ Sonia Cortassa
 
 ---
 
-2025-05-30: Standardized to Markdown, and separated headers and formatting according to instructions.
+2025-05-30: Standardized to Markdown
